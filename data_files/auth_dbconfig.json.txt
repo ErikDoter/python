@@ -1,0 +1,4 @@
+{ "host" : "localhost",
+"user" : "Guest",
+"password" : "password",
+"database" : "kursovaya_academic_plan"}

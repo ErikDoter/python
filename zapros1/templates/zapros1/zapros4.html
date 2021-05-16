@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Request1</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+</head>
+<style>
+	body 
+	{
+      	background: rgba(255, 250, 250);
+   	}
+</style>
+	<div class="output">
+	<h5>Результирующая таблица:</h>
+	</div>
+	<table class="table table-bordered table-dark">
+		<thead>
+			<tr>
+				<th scope="col">id</th>
+				<th scope="col">семестр</th>
+				<th scope="col">год</th>
+				<th scope="col">Кол-во дисциплин</th>
+			</tr>
+		</thead>
+		<tbody>
+		{%for ot in otchet%}
+			<tr>
+				<td align=center>{{ot['ap_id']}}</td>
+				<td align=center>{{ot['semestr']}}</td>
+				<td align=center>{{ot['year_plan']}}</td>
+				<td align=center>{{ot['min_var_discipline']}}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</html>

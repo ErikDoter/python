@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+</head>
+<style>
+	body {
+		background-image: url('https://img1.goodfon.ru/original/1920x1080/9/6f/minimalizm-gradient-background.jpg');
+	}
+	.text {
+		font-size: 30px;
+		color: white;
+		margin-top: 40px;
+		margin-left: 30px;
+	}
+	.container {
+		display: flex;
+		flex-direction: column;
+		margin-top: 30px;
+		margin-left: 10px;
+	}
+
+	.choice {
+		display: flex;
+		justify-content: space-between;
+		width: 80%;
+		margin-top: 30px;
+	}
+
+	.hours {
+		font-size: 25px;
+		color: white;
+	}
+	.label {
+		font-size: 25px;
+		color: white;
+	}
+
+		.button {
+		border-radius: 10px;
+		background-color: rgba(189, 87, 4, 1);
+		color: white;
+		border: none;
+		box-shadow: none;
+		width: 100px;
+		height: 30px;
+		margin-left: 100px
+	}
+
+		.button:hover {
+		background-color: rgba(255, 179, 117, 1); 
+		cursor: pointer;
+	}
+
+	.main {
+		font-size: 50px;
+		color: white;
+		display: block;
+		padding: 50px;
+	}
+</style>
+<body>
+	<span class="main">Теперь выберите вариативные дисциплины</span>
+	<span class="text">Выбрано предметов: {{len}}</span>
+	<div class="container">
+		{%for item in catalog%}
+			<form method='POST' action=''>
+				<input type=hidden name=name value={{item.name}}>
+				<input type=hidden name=id value={{item.id}}>
+				<div class="choice">
+					<input type=hidden name=count value={{item.total_hours}}>  
+					<label for=countn class="label">{{item['name']}}</label>
+					<span class="hours">количество часов: {{item['total_hours']}}</span>
+					<input  value='Добавить' name='send' type='submit' class="button">
+				</div>
+			</form>
+		{% endfor %}
+	</div>
+		<form method='POST' action=''>
+			<input style="width:300px; margin-top: 30px;" class="button" value='Показать план' name='send' type='submit'>
+		</form>
+</body>
+</html>

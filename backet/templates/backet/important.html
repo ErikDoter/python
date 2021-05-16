@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>important</title>
+</head>
+<style>
+	body {
+		background: url('https://img2.akspic.ru/image/32536-socialnaya_gruppa-druzhba-obrazovanie-molodost-devuska-1920x1080.jpg');
+	}
+
+		.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		margin-left: 500px;
+		margin-top: 150px;
+		width: 600px;
+		height: 400px;
+		background-color: rgba(0,0,0,0.8);
+		border-radius: 20px;
+	}
+	.main {
+		color: white;
+		font-size: 30px;
+		font-family: Arial, sans-serif;
+		font-weight: bold;
+		margin-left: 20px
+	}
+	.secondary {
+		font-size: 17px;
+		color: white;
+		font-family: Arial, sans-serif;
+		font-weight: bold;
+		margin-left: 20px; 
+	}
+
+	.info {
+		font-size: 15px;
+		color: white;
+		font-family: Arial, sans-serif;
+		margin-left: 20px; 
+		margin-top: -60px;
+	}
+
+		.button {
+		border-radius: 10px;
+		background-color: rgba(189, 87, 4, 1);
+		color: white;
+		border: none;
+		box-shadow: none;
+		width: 300px;
+		height: 40px;
+		margin-left: 20px
+	}
+
+	.button:hover {
+		background-color: rgba(255, 179, 117, 1); 
+		cursor: pointer;
+	}
+</style>
+<body>
+	<div class="container">
+		<span class="main">Список обязательных дисциплин</span>
+			<span class="secondary">На вашем семестре будут следующие обязательные дисциплины, согласитесь с ними</span><br>
+			{%for item in catalog%}
+				<span class="info">{{item.name}} Количество часов: {{item.total_hours}}</span><br>
+			{% endfor %}
+			<form method='POST' action=''>
+					<input class="button" value='Показать вариативные дисциплины' name='send' type='submit'>
+			</form>
+	</div>
+</body>
+</html>

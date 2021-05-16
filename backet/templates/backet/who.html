@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>who</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+</head>
+<style>
+	body {
+		background: url('https://img3.akspic.ru/image/139799-obrazovanie-uchitel-klass-ochki-kolledzh-1920x1080.jpg');
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		margin-left: 630px;
+		margin-top: 250px;
+		width: 270px;
+		height: 200px;
+		background-color: rgba(0,0,0,0.8);
+		border-radius: 20px;
+	}
+
+	.label {
+		font-size: 20px;
+		color: white;
+		margin-left: 20px
+	}
+
+	.input {
+		width: 190px;
+		margin-left: 20px;
+		border-radius: 10px;
+		border: 1px solid orange;
+		height: 20px;
+	}
+	.button {
+		border-radius: 10px;
+		background-color: rgba(189, 87, 4, 1);
+		color: white;
+		border: none;
+		box-shadow: none;
+		width: 100px;
+		height: 20px;
+		margin-left: 100px
+	}
+
+		.button:hover {
+		background-color: rgba(255, 179, 117, 1); 
+		cursor: pointer;
+	}
+</style>
+<body>
+		<form method='POST' action=''>
+			<div class="container">
+			<label for=student><span class="label">Введите id студента:</span></label>
+				<input type=text id=student name=student placeholder="Студент" class="input">
+				<label for=semestr><span class="label">Введите семестр:</span></label>
+				<input type=text id=semestr name=semestr placeholder="Семестр" class="input">
+				<input class="button" value='Дальше' name='send' type='submit'>
+			</div>
+		</form>
+</body>
+</html>

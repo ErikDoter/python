@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Zapros1</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+</head>
+<style>
+	body 
+	{
+      	background: rgba(255, 250, 250);
+   	}
+
+
+	.button {
+		border-radius: 10px;
+		background-color: rgba(189, 87, 4, 1);
+		color: white;
+		border: none;
+		box-shadow: none;
+		width: 100px;
+		height: 30px;
+		margin-left: 100px
+	}
+
+	.button:hover {
+		background-color: rgba(255, 179, 117, 1); 
+		cursor: pointer;
+	}
+</style>
+	<table class="table table-bordered table-dark">
+		<thead>
+			<tr>
+				<th scope="col">id</th>
+				<th scope="col">Название</th>
+				<th scope="col">Количество часов</th>
+			</tr>
+		</thead>
+		<tbody>
+
+		{%for b in backet%}
+			<tr>
+				<td align=center>
+							<form method='POST' action=''>
+							<input type=hidden name=id value={{b.choice_id}} ><input style="margin-left: 15px; margin-top: 15px; font-size: 15px; font-family: 'Oswald', cursive;"  value='Убрать' name='send' type='submit' class="button"> 
+								</form>
+					{{b['choice_id']}} 
+				</td>
+				<td align=center>{{b['choice_name']}}</td>
+				<td align=center>{{b['quantity']}}</td>
+			</tr>
+		{% endfor %}
+
+		</tbody>
+	</table>
+	<form method='POST' action=''>
+		<input style="margin-left: 15px; margin-top: 15px; font-size: 15px; font-family: 'Oswald', cursive;"value='Вернуться' name='send' type='submit' class="button">
+		<input style="margin-left: 15px; margin-top: 15px; font-size: 15px; font-family: 'Oswald', cursive;" value='Очистить' name='send' type='submit' class="button">
+		<input style="margin-left: 15px; margin-top: 15px; font-size: 15px; font-family: 'Oswald', cursive;" value='Подтвердить' name='send' type='submit' class="button">
+	</form>
+</html>

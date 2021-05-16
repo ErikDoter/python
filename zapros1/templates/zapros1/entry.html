@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>entry zapros</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+</head>
+<style>
+	body {
+		background-image:  url('https://img1.goodfon.ru/original/1920x1080/a/cb/studenty-doska-prepod-formuly.jpg');
+	}
+
+	.zaprosi {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.container {
+		margin-top: 30px;
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		vertical-align: super;
+		width: 400px;
+		height: 300px;
+		background-color: rgba(0,0,0,0.8);
+		border-radius: 20px;
+	}
+
+	.text {
+		color: white;
+		font-size: 15px;
+		font-weight: bold;
+	}
+
+	.label {
+		color: white;
+		font-size: 13px;
+		display: block;
+		margin-top: 20px
+	}
+	.input {
+		width: 300px;
+		height: 30px;
+		border-radius: 20px;
+		border: 1px solid orange;
+	}
+
+	.button {
+		border-radius: 10px;
+		background-color: rgba(189, 87, 4, 1);
+		color: white;
+		border: none;
+		box-shadow: none;
+		width: 150px;
+		height: 30px;
+		margin-top: 20px;
+	}
+
+	.button:hover {
+		background-color: rgba(255, 179, 117, 1); 
+		cursor: pointer;
+	}
+
+</style>
+<body>
+	<div class="zaprosi">
+		<div class="container">
+			<span class="text">
+				1.Составить отчет о включении вариативных дисциплин в индивидуальные
+				планы студентов в 2017 году по форме:
+				Шифр дисциплины, название дисциплины, кол-во включений
+			</span>
+			<form method='POST' action=''>
+				<label for=month class="label">Введите месяц:</label>
+				<input type=text id=month name=month class="input">
+				<label for=year class="label">Введите год:</label>
+				<input type=text id=year name=year class="input">
+				<input  value='Отправить' name='send' type='submit' class="button">
+			</form>
+		</div>
+
+		<div class="container">
+			<span class="text">
+				2. Составить отчет о включении дисциплины XXX в индивидуальные планы
+				по форме:
+				Название специальности, количество включений
+			</span>
+				<form method='POST' action=''>
+					<label for=month class="label">Введите предмет:</label>
+					<input type=text id=zapros2 name=zapros2 class="input">
+					<input value='Отправить(2)' name='send' type='submit' class="button">
+				</form>
+		</div>
+
+		<div class="container">
+			<span class="text">
+				3. Показать все сведения о дисциплине с самым большим объемом учебных
+				часов
+			</span>
+				<form method='POST' action=''>
+					<input value='Отправить(3)' name='send' type='submit' class="button">
+				</form>
+		</div>
+	</div>
+	<div class="zaprosi">
+		<div class="container">
+			<span class="text">
+				4. Показать все сведения об индивидуальном плане с самым большим
+				количеством вариативных дисциплин
+			</span>
+				<form method='POST' action=''>
+					<input value='Отправить(4)' name='send' type='submit' class="button">
+				</form>
+		</div>
+
+		<div class="container">
+			<span class="text">
+				5. Найти вариативные дисциплины, которые пока не включались в учебные
+				планы
+			</span>
+				<form method='POST' action=''>
+					<input value='Отправить(5)' name='send' type='submit' class="button">
+				</form>
+		</div>
+
+		<div class="container">
+			<span class="text">
+				6. Найти вариативные дисциплины, которые не включались в учебные планы
+				в 2017 году
+			</span>
+				<form method='POST' action=''>
+					<label for=year class="label">Введите год:</label>
+					<input type=text id=zapros6_year name=zapros6_year class="input">
+					<input value='Отправить(6)' name='send' type='submit' class="button">
+				</form>
+		</div>
+	</div>
+</body>
+</html>

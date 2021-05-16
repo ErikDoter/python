@@ -1,0 +1,4 @@
+[{"name" : "Requests", "url" : "?point=1"},
+{"name" : "Login", "url" : "?point=2"},
+{"name" : "Academic plan", "url" : "?point=3"},
+{"name" : "Exit", "url" : "?point=exit"}]

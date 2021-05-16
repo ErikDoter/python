@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Lab4 db request</title>
+</head>
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+	body {
+		background-image: url('https://cdnb.artstation.com/p/assets/images/images/019/834/345/large/ivan-demin-89.jpg?1565196479');
+	}
+
+	.main {
+		font-size: 60px;
+		font-family: 'Righteous', cursive;
+		color: white;
+		margin-left: 450px;
+		margin-top: 30px
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		margin-left: 630px;
+		margin-top: 100px;
+		width: 200px;
+		height: 400px;
+		background-color: rgba(0,0,0,0.8);
+		border-radius: 20px;
+	}
+	.links {
+		margin-left: 40px;
+	}
+	.links a {
+		color: white;
+		font-size: 30px;
+		text-decoration-line: none;
+	}
+	.links a:hover {
+		color: orange;
+	}
+</style>
+<body>
+	<div class="main">
+		Homework №2 RIS
+	</div>
+	<div class = "container">
+		{%for m in menu%}
+		<div class = "links">
+			<a href = "{{m.url}}">{{m.name}}</a>
+		</div>
+		{%endfor%}
+	</div>
+</body>
+</html>

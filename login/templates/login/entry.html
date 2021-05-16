@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+</head>
+<style>
+	body {
+		background: url('https://cdn22.img.ria.ru/images/91249/01/912490103_0:89:2000:1214_1920x0_80_0_0_e50fb96c06c52d661a878d9562c3fe36.jpg');
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		margin-left: 630px;
+		margin-top: 250px;
+		width: 270px;
+		height: 200px;
+		background-color: rgba(0,0,0,0.8);
+		border-radius: 20px;
+	}
+
+	.label {
+		font-size: 20px;
+		color: white;
+		margin-left: 20px
+	}
+
+	.input {
+		width: 190px;
+		margin-left: 20px;
+		border-radius: 10px;
+		border: 1px solid orange;
+		height: 30px;
+	}
+	.button {
+		border-radius: 10px;
+		background-color: rgba(189, 87, 4, 1);
+		color: white;
+		border: none;
+		box-shadow: none;
+		width: 100px;
+		height: 30px;
+		margin-left: 100px
+	}
+
+		.button:hover {
+		background-color: rgba(255, 179, 117, 1); 
+		cursor: pointer;
+	}
+</style>
+<body>
+	<form method='POST' action=''>
+		<div class="container">
+			<label class="label" for=login>Введите логин:</label>
+			<input class="input" type=text id=login name=login placeholder="Логин">
+			<label class="label" for=password>Введите пароль:</label>
+			<input class="input" type=text id=password name=password placeholder="Пароль">
+			<input class="button" value='Отправить' name='send' type='submit'>
+		</div>
+	</form>
+
+</body>
+</html>

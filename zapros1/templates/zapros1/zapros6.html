@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Request1</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+</head>
+<style>
+	body 
+	{
+      	background: rgba(255, 250, 250);
+   	}
+</style>
+	<div class="output">
+	<h5>Результирующая таблица:</h>
+	</div>
+	<table class="table table-bordered table-dark">
+		<thead>
+			<tr>
+				<th scope="col">id</th>
+				<th scope="col">Название</th>
+				<th scope="col">Лабы</th>
+				<th scope="col">Семинары</th>
+				<th scope="col">Часы</th>
+				<th scope="col">Лекции</th>
+			</tr>
+		</thead>
+		<tbody>
+		{%for ot in otchet%}
+			<tr>
+				<td align=center>{{ot['d_id']}}</td>
+				<td align=center>{{ot['name']}}</td>
+				<td align=center>{{ot['total_labs']}}</td>
+				<td align=center>{{ot['total_sems']}}</td>
+				<td align=center>{{ot['total_hours']}}</td>
+				<td align=center>{{ot['total_lec']}}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</html>
